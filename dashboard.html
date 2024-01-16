@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+
+<body>
+    <div class="box-dashboard">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bgwhite">
+            <div class="container-fluid m-1 d-flex align-items-center justify-content-between pt-2">
+
+                <div class="logo d-flex align-item-center">
+                    <div class="navbar-brand menubar-icon" id="leftbartrigger" onclick="togglemenu()"><img
+                            src="images/menu-bar.svg" alt="" srcset=""></div>
+                    <a class="navbar-brand header-logo me-md-5 me-sm-5 me-lg-5" href="#"><img
+                            src="images/header-logo.svg" alt="" srcset=""></a>
+                    <form class="d-flex mw-100 ms-xl-5" role="search">
+                        <div class="input-group input-navbar-form">
+                            <button class="btn btn-navbar-form p-1" type="button" id="button-addon1"><svg width="100%"
+                                    height="100%" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+                                    xmlns:serif="http://www.serif.com/"
+                                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                                    <g transform="matrix(1,0,0,1,0.538785,0.53832)">
+                                        <path
+                                            d="M8.333,15C9.812,15 11.249,14.505 12.414,13.593L16.078,17.257L17.256,16.078L13.592,12.415C14.504,11.25 15,9.813 15,8.333C15,4.657 12.009,1.667 8.333,1.667C4.657,1.667 1.667,4.657 1.667,8.333C1.667,12.009 4.657,15 8.333,15ZM8.333,3.333C11.091,3.333 13.333,5.576 13.333,8.333C13.333,11.091 11.091,13.333 8.333,13.333C5.576,13.333 3.333,11.091 3.333,8.333C3.333,5.576 5.576,3.333 8.333,3.333Z"
+                                            style="fill-rule:nonzero;" />
+                                    </g>
+                                </svg></button>
+                            <input type="text" class="form-control nav-search-input" placeholder="search"
+                                aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+
+
+                <ul class="navbar-nav mb-lg-0 d-flex flex-row align-items-center justify-content-center">
+                    <li class="nav-item d-flex align-items-center notification-icon me-lg-4 me-md-3 me-sm-1">
+                        <img src="images/notification-icon.svg" alt="" srcset="">
+                    </li>
+                    <li class="nav-item profileimg">
+                        <img src="images/profile.png" alt="" srcset="">
+                    </li>
+                    <!-- <li class="nav-item">
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Link with href
+                            </a>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                </div>
+                            </div>
+                        </li> -->
+                    <li class="nav-item dropdown profilename">
+                        <a class="nav-link dropdown-toggle dropdown-arrow-remove" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            John Deo
+                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" ms-2>
+                                <path
+                                    d="M8.49999 13.3333C8.33449 13.3337 8.1741 13.2659 8.04666 13.1417L3.79666 8.97501C3.65201 8.83356 3.56104 8.6303 3.54377 8.40994C3.5265 8.18959 3.58434 7.97019 3.70458 7.80001C3.82481 7.62983 3.99758 7.52281 4.18488 7.50249C4.37218 7.48217 4.55867 7.55022 4.70332 7.69167L8.49999 11.425L12.2967 7.82501C12.3691 7.75578 12.4525 7.70409 12.542 7.6729C12.6315 7.64171 12.7253 7.63163 12.8181 7.64324C12.9109 7.65486 13.0009 7.68794 13.0828 7.74058C13.1647 7.79323 13.237 7.8644 13.2954 7.95001C13.3603 8.03569 13.4094 8.13621 13.4397 8.24527C13.47 8.35434 13.4809 8.46959 13.4716 8.58381C13.4622 8.69802 13.433 8.80875 13.3856 8.90905C13.3382 9.00935 13.2738 9.09705 13.1962 9.16667L8.94624 13.1917C8.81514 13.2963 8.65802 13.3461 8.49999 13.3333Z"
+                                    fill="black" />
+                            </svg>
+
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!-- </div> -->
+
+            </div>
+        </nav>
+
+        <div class="container-fluid d-flex p-0 below-nav">
+            <div class="left-side-sidebar px-4 pt-3" id="leftsidebar">
+                <div class="left-sidebar-content-first d-flex align-items-center">
+                    <a href="dashboard.html" class="sidebar-link">
+                        <img src="images/dashboard-active.svg" alt="" srcset="">
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <a href="dashboard.html" class="sidebar-link">
+                        <img src="images/graph-default.svg" alt="" srcset="">
+                        <span>Analysis</span>
+                    </a>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <a href="#" class="sidebar-link">
+                        <img src="images/inbox-default.svg" alt="" srcset="">
+                        <span>Inbox</span>
+                    </a>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <a href="#" class="sidebar-link">
+                        <img src="images/clock-default.svg" alt="" srcset="">
+                        <span>History</span>
+                    </a>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <a href="#" class="sidebar-link"></a>
+                    <img src="images/user-default.svg" alt="" srcset="">
+                    <span>Users</span>
+                    </a>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <a href="#" class="sidebar-link"></a>
+                    <img src="images/maintenance-default.svg" alt="" srcset="">
+                    <span>Maintenance</span>
+                    </a>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <a href="#" class="sidebar-link"></a>
+                    <img src="images/setting-default.svg" alt="" srcset="">
+                    <span>Setting</span>
+                    </a>
+                </div>
+
+
+            </div>
+
+            <div class="right-side-sidebar p-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 right-side-dashboard">
+                            Dashboard
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col bg-white d-flex align-items-center justify-content-center mx-3 py-4 mb-4">
+                            <div class="card-image m-3 ms-0">
+                                <img src="images/star.svg" alt="" srcset="">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="mb-0">23,456</h3>
+                                <span>New Products</span>
+                            </div>
+                        </div>
+                        <div class="col bg-white d-flex align-items-center justify-content-center mx-3 py-4 mb-4">
+                            <div class="card-image m-3 ms-0">
+                                <img src="images/new-product.svg" alt="" srcset="">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="mb-0">2345</h3>
+                                <span>Added Products</span>
+                            </div>
+                        </div>
+                        <div class="col bg-white d-flex align-items-center justify-content-center mx-3 py-4 mb-4">
+                            <div class="card-image m-3 ms-0">
+                                <img src="images/total-product.svg" class="card-total-product" alt="" srcset="">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="mb-0">32,456</h3>
+                                <span>Total Products</span>
+                            </div>
+                        </div>
+                        <div class="col bg-white d-flex align-items-center justify-content-center mx-3 py-4 mb-4">
+                            <div class="card-image m-3 ms-0">
+                                <img src="images/dollar-filled.svg" alt="" srcset="">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="mb-0">5678</h3>
+                                <span>Today’s Sale</span>
+                            </div>
+                        </div>
+                        <div class="col bg-white d-flex align-items-center justify-content-center mx-3 py-4 mb-4    ">
+                            <div class="card-image m-3 ms-0">
+                                <img src="images/money-bag.svg" alt="" srcset="">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="mb-0">33,5342</h3>
+                                <span>Total Sale</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="container-fluid p-3">
+                        <div class="row d-flex flex-row justify-space-between">
+                            <div class="col-md-7 p-3 bg-white a data-graph-image">
+                                <div class="data-graph-content mb-3">
+                                    <div class="data-graph-left">
+                                        Sale
+                                    </div>
+                                    <div class="data-graph-right">
+                                        <span class="first-data">Weekly</span>
+                                        <span class="second-data">Monthly</span>
+                                        <span class="third-data">Yearly</span>
+                                    </div>
+                                </div>
+                                <img src="images/data-graph.png" alt="" srcset="">
+                            </div>
+                            <div class="col-md-4 p-3 bg-white offset-1 a pie-chart-image">
+                                <div class="pie-chart-heading-content">
+                                    Sales by Country
+                                </div>
+                                <img src="images/pie-chart.svg" alt="" srcset=""
+                                    class="d-flex align-items-center justify-content-center">
+                                <div class="pie-chart-content mb-3">
+                                    <div class="row mb-2 ">
+                                        <div
+                                            class="col-8 pe-1 pie-chart-content-element pie-chart-content-element-first">
+                                            <div class="me-2"></div>
+                                            <p class="m-0">United States of America</p>
+                                        </div>
+                                        <div
+                                            class="col-4 pe-1 pie-chart-content-element pie-chart-content-element-second">
+                                            <div class="me-2"></div>
+                                            <p class="m-0">Canada</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div
+                                            class="col-8 pe-1 pie-chart-content-element pie-chart-content-element-third">
+                                            <div class="me-2"></div>
+                                            <p class="m-0">Russia</p>
+                                        </div>
+                                        <div
+                                            class="col-4 pe-1 pie-chart-content-element pie-chart-content-element-fourth">
+                                            <div class="me-2"></div>
+                                            <p class="m-0">India</p>
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                    <div class="container-fluid p-3 mobile-view-addtion-padding">
+                        <div class="row second-graph-portion">
+                            <div class="col-xl-7 col-lg-7 data-graph-image pt-3 mobile-view-addtion">
+                                <div class="container-fluid bg-white">
+                                    <div class="data-graph-content mb-3">
+                                        <div class="data-graph-left">
+                                            Sale
+                                        </div>
+                                        <div class="data-graph-right">
+                                            <span class="first-data">Weekly</span>
+                                            <span class="second-data">Monthly</span>
+                                            <span class="third-data">Yearly</span>
+                                        </div>
+                                    </div>
+                                    <img src="images/data-graph.png" alt="" srcset="">
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 pie-chart-image mobile-view-addtion mobile-view-addtion-pie">
+                                <div class="container-fluid bg-white p-3">
+                                    <div class="pie-chart-heading-content mb-2">
+                                        Sales by Country
+                                    </div>
+                                    <img src="images/pie-chart.svg" alt="" srcset=""
+                                        class="d-flex align-items-center justify-content-center">
+                                    <div class="pie-chart-content mb-3">
+                                        <div class="row mb-2 ">
+                                            <div
+                                                class="col-8 pe-1 pie-chart-content-element pie-chart-content-element-first">
+                                                <div class="me-2"></div>
+                                                <p class="m-0">United States of America</p>
+                                            </div>
+                                            <div
+                                                class="col-4 pe-1 pie-chart-content-element pie-chart-content-element-second">
+                                                <div class="me-2"></div>
+                                                <p class="m-0">Canada</p>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <div
+                                                class="col-8 pe-1 pie-chart-content-element pie-chart-content-element-third">
+                                                <div class="me-2"></div>
+                                                <p class="m-0">Russia</p>
+                                            </div>
+                                            <div
+                                                class="col-4 pe-1 pie-chart-content-element pie-chart-content-element-fourth">
+                                                <div class="me-2"></div>
+                                                <p class="m-0">India</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="pie-chart-first">
+                                        <div class="pie-chart-first-left d-flex align-items-center justify-content-center">
+                                            <div></div>
+                                            <p class="m-0">United States of America</p>
+                                        </div>
+                                        <div class="pie-chart-first-right">
+                                            <div></div>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="pie-chart-second">
+    
+                                    </div> -->
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-9 bg-white data-graph-image">
+                            <img src="images/data-graph.png" alt="" srcset="">
+                        </div>
+                        <div class="col-md-3 bg-white">
+                            <img src="images/pie-chart.svg" alt="" srcset="">
+                        </div>
+                    </div>
+                </div> -->
+
+                    <div class="row px-3 py-2">
+                        <div class="container-fluid">
+                            <div class="row d-flex flex-column align-items-center justify-content-center bg-white">
+                                <div class="col-1 d-flex align-items-center justify-content-between w-100 p-3">
+                                    <div class="table-title fs-5">
+                                        Invoices
+                                    </div>
+                                    <a href="#" class="view-table-link">
+                                        View All
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless table-dashboard">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col w-100">INVOICE</th>
+                                                    <th scope="col text-nowrap">COMPANY NAME</th>
+                                                    <th scope="col">EMAIL</th>
+                                                    <th scope="col">DUE DATE</th>
+                                                    <th scope="col">STATUS</th>
+                                                    <th scope="col">AMOUNT</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td scope="row">651535</td>
+                                                    <td>Public Adjusting Firm</td>
+                                                    <td>georgia.young@example.com</td>
+                                                    <td>24 May, 2020</td>
+                                                    <td class="table-entry-status-paid">
+                                                        <div>Paid</div>
+                                                    </td>
+                                                    <td>$47,800</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">558612</td>
+                                                    <td>Other</td>
+                                                    <td>jessica.hanson@example.com</td>
+                                                    <td>24 May, 2020</td>
+                                                    <td class="table-entry-status-paid">
+                                                        <div>Paid</div>
+                                                    </td>
+                                                    <td>$98,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">558612</td>
+                                                    <td>Vendor</td>
+                                                    <td>alma.lawson@example.com</td>
+                                                    <td>8 Sep, 2020</td>
+                                                    <td class="table-entry-status-paid">
+                                                        <div>Paid</div>
+                                                    </td>
+                                                    <td>$20,900</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">558612</td>
+                                                    <td>Property Management Company</td>
+                                                    <td>kenzi.lawson@example.com</td>
+                                                    <td>22 Oct, 2020</td>
+                                                    <td class="table-entry-status-paid">
+                                                        <div>Paid</div>
+                                                    </td>
+                                                    <td>$10,570</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">651535</td>
+                                                    <td>Subcontractor Company</td>
+                                                    <td>jackson.graham@example.com</td>
+                                                    <td>1 Feb, 2020</td>
+                                                    <td class="table-entry-status-failed">
+                                                        <div>Failed</div>
+                                                    </td>
+                                                    <td>$10,200</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">$10,200</td>
+                                                    <td>Mortgage Company</td>
+                                                    <td>felicia.reid@example.com</td>
+                                                    <td>22 Oct, 2020</td>
+                                                    <td class="table-entry-status-pending">
+                                                        <div>Pending</div>
+                                                    </td>
+                                                    <td>$12,600</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">487441</td>
+                                                    <td>TPA</td>
+                                                    <td>dolores.chambers@example.com</td>
+                                                    <td>21 Sep, 2020</td>
+                                                    <td class="table-entry-status-paid">
+                                                        <div>Paid</div>
+                                                    </td>
+                                                    <td>$11,170</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">267400</td>
+                                                    <td>Fire Department</td>
+                                                    <td>nevaeh.simmons@example.com</td>
+                                                    <td>17 Oct, 2020</td>
+                                                    <td class="table-entry-status-failed">
+                                                        <div>Failed</div>
+                                                    </td>
+                                                    <td>$28,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td scope="row">449003</td>
+                                                    <td>Insurance Carrier</td>
+                                                    <td>curtis.weaver@example.com</td>
+                                                    <td>21 Sep, 2020</td>
+                                                    <td class="table-entry-status-paid">
+                                                        <div>Paid</div>
+                                                    </td>
+                                                    <td>$10,000</td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        function togglemenu() {
+            var x = document.getElementById("leftsidebar").style.display;
+            console.log(x);
+        }
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+
+<body>
+    <div class="box-dashboard">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bgwhite">
+            <div class="container-fluid m-1 d-flex align-items-center justify-content-between pt-2">
+
+                <div class="logo d-flex align-item-center">
+                    <div class="navbar-brand menubar-icon" id="leftbartrigger" onclick="togglemenu()"><img
+                            src="images/menu-bar.svg" alt="" srcset=""></div>
+                    <a class="navbar-brand header-logo me-md-5 me-sm-5 me-lg-5" href="#"><img
+                            src="images/header-logo.svg" alt="" srcset=""></a>
+                    <form class="d-flex mw-100 ms-xl-5" role="search">
+                        <div class="input-group input-navbar-form">
+                            <button class="btn btn-navbar-form p-1" type="button" id="button-addon1"><svg width="100%"
+                                    height="100%" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+                                    xmlns:serif="http://www.serif.com/"
+                                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                                    <g transform="matrix(1,0,0,1,0.538785,0.53832)">
+                                        <path
+                                            d="M8.333,15C9.812,15 11.249,14.505 12.414,13.593L16.078,17.257L17.256,16.078L13.592,12.415C14.504,11.25 15,9.813 15,8.333C15,4.657 12.009,1.667 8.333,1.667C4.657,1.667 1.667,4.657 1.667,8.333C1.667,12.009 4.657,15 8.333,15ZM8.333,3.333C11.091,3.333 13.333,5.576 13.333,8.333C13.333,11.091 11.091,13.333 8.333,13.333C5.576,13.333 3.333,11.091 3.333,8.333C3.333,5.576 5.576,3.333 8.333,3.333Z"
+                                            style="fill-rule:nonzero;" />
+                                    </g>
+                                </svg></button>
+                            <input type="text" class="form-control" placeholder="search"
+                                aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+
+
+                <ul class="navbar-nav mb-lg-0 d-flex flex-row align-items-center justify-content-center">
+                    <li class="nav-item d-flex align-items-center notification-icon me-lg-4 me-md-3 me-sm-1">
+                        <img src="images/notification-icon.svg" alt="" srcset="">
+                    </li>
+                    <li class="nav-item profileimg">
+                        <img src="images/profile.png" alt="" srcset="">
+                    </li>
+                    <!-- <li class="nav-item">
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Link with href
+                            </a>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                </div>
+                            </div>
+                        </li> -->
+                    <li class="nav-item dropdown profilename">
+                        <a class="nav-link dropdown-toggle dropdown-arrow-remove" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            John Deo
+                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" ms-2>
+                                <path
+                                    d="M8.49999 13.3333C8.33449 13.3337 8.1741 13.2659 8.04666 13.1417L3.79666 8.97501C3.65201 8.83356 3.56104 8.6303 3.54377 8.40994C3.5265 8.18959 3.58434 7.97019 3.70458 7.80001C3.82481 7.62983 3.99758 7.52281 4.18488 7.50249C4.37218 7.48217 4.55867 7.55022 4.70332 7.69167L8.49999 11.425L12.2967 7.82501C12.3691 7.75578 12.4525 7.70409 12.542 7.6729C12.6315 7.64171 12.7253 7.63163 12.8181 7.64324C12.9109 7.65486 13.0009 7.68794 13.0828 7.74058C13.1647 7.79323 13.237 7.8644 13.2954 7.95001C13.3603 8.03569 13.4094 8.13621 13.4397 8.24527C13.47 8.35434 13.4809 8.46959 13.4716 8.58381C13.4622 8.69802 13.433 8.80875 13.3856 8.90905C13.3382 9.00935 13.2738 9.09705 13.1962 9.16667L8.94624 13.1917C8.81514 13.2963 8.65802 13.3461 8.49999 13.3333Z"
+                                    fill="black" />
+                            </svg>
+
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!-- </div> -->
+
+            </div>
+        </nav>
+
+        <div class="container-fluid d-flex p-0 below-nav">
+            <div class="left-side-sidebar px-4 pt-3" id="leftsidebar">
+                <div class="left-sidebar-content-first d-flex align-items-center">
+                    <img src="images/dashboard-active.svg" alt="" srcset="">
+                    <span>Dashboard</span>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <img src="images/graph-default.svg" alt="" srcset="">
+                    <span>Analysis</span>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <img src="images/inbox-default.svg" alt="" srcset="">
+                    <span>Inbox</span>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <img src="images/clock-default.svg" alt="" srcset="">
+                    <span>History</span>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <img src="images/user-default.svg" alt="" srcset="">
+                    <span>Users</span>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <img src="images/maintenance-default.svg" alt="" srcset="">
+                    <span>Maintenance</span>
+                </div>
+                <div class="left-sidebar-content d-flex align-items-center">
+                    <img src="images/setting-default.svg" alt="" srcset="">
+                    <span>Setting</span>
+                </div>
+
+
+            </div>
+
+            <div class="right-side-sidebar p-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 right-side-dashboard">
+                            Analysis
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <form class="bg-white p-4">
+
+                                <div class="row my-4 mt-0">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">One Column</h4>
+                                    </div>
+                                    <div class="mb-3 analysis-form-field">
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Email" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3 analysis-form-field">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Dropdown</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 analysis-form-field">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                            placeholder="Multiple line"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row my-4">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">Two Column</h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-ld-6 mb-3">
+                                                <div
+                                                    class="input-containerform media-margin-bottom analysis-form-field">
+                                                    <input type="text" id="sname" class="input-textform"
+                                                        placeholder=" ">
+                                                    <label for="sname" class="input-labelform">Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-ld-6 mb-3">
+                                                <div class="input-containerform analysis-form-field mb-4">
+                                                    <input type="text" id="susername" class="input-textform"
+                                                        placeholder=" ">
+                                                    <label for="susername" class="input-labelform">Username</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 analysis-form-field">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-ld-6 mb-3">
+                                                <div
+                                                    class="input-containerform analysis-form-field media-margin-bottom">
+                                                    <input type="password" id="spassword" class="input-textform"
+                                                        placeholder=" ">
+                                                    <label for="spassword" class="input-labelform">Password</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-ld-6">
+                                                <div class="input-containerform analysis-form-field">
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Dropdown</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-4">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">Three Column</h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="row d-flex flex-row">
+                                            <div class="col-sm-12 col-md-4 col-ld-4 mb-3">
+                                                <div class="input-containerform media-margin-bottom">
+                                                    <input type="text" id="tfocus"
+                                                        class="input-textform input-textform-focus" placeholder=" ">
+                                                    <label for="tfocus" class="input-labelform">Focus</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4 col-ld-4 mb-3">
+                                                <div class="input-containerform media-margin-bottom">
+                                                    <input type="password" id="tpassword" class="input-textform"
+                                                        placeholder=" ">
+                                                    <label for="tpassword" class="input-labelform">Password</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4 col-ld-4">
+                                                <div class="input-containerform media-margin-bottom">
+                                                    <input type="text" id="focus" class="input-textform"
+                                                        placeholder="johndoe" disabled>
+                                                    <label for="focus" class="input-labelform-disable">Disabled</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row my-4">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">Four Column</h4>
+                                    </div>
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-3 col-ld-3 mb-3">
+                                                <div class="row d-flex flex-column">
+                                                    <div class="col forth-margin-bottom">
+                                                        <div
+                                                            class="input-containerform media-margin-bottom input-textform-validation">
+                                                            <input type="text" id="fdesignation" class="input-textform"
+                                                                placeholder=" ">
+                                                            <label for="fdesignation"
+                                                                class="input-labelform input-textform-validation-lable">Designation</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col input-labelform-content">Enter Valid data</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-3 col-ld-3 mb-3">
+                                                <div class="row d-flex flex-column">
+                                                    <div class="col forth-margin-bottom">
+                                                        <div
+                                                            class="input-containerform media-margin-bottom input-textform-validation">
+                                                            <input type="text" id="frname" class="input-textform"
+                                                                placeholder=" ">
+                                                            <label for="frname"
+                                                                class="input-labelform input-textform-validation-lable">Name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col input-labelform-content">Enter your full Name as per
+                                                        ID</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-3 col-ld-3 mb-3">
+                                                <div class="input-containerform media-margin-bottom">
+                                                    <input type="text" id="fusername"
+                                                        class="input-textform input-textform-focus" placeholder=" ">
+                                                    <label for="fusername" class="input-labelform">Username</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-3 col-ld-3 mb-3">
+                                                <div class="input-containerform analysis-form-field">
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Dropdown</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row my-4">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">Other Design Elements</h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <div class="file-upload-button">
+                                                    <input type="file" id="actual-btn" hidden/>
+                                                    <label for="actual-btn"><img
+                                                        src="images/cloud-upload-icon.svg" class="me-2" alt=""
+                                                        srcset="">
+                                                    <p class="m-0">Upload</p></label>
+                                                    <span id="file-chosen">No item Selected</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row my-4">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">Radio Button</h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-ld-6 d-flex">
+                                                <div class="radiobtns pe-4">
+                                                    <input type="radio" class="me-1 analysis-form-check-radio"
+                                                        name="radiobtnoption" id="radiobtnoption1">
+                                                    <label for="radiobtnoption1">Option 1</label>
+                                                </div>
+                                                <div class="radiobtns pe-4">
+                                                    <input type="radio" class="me-1 analysis-form-check-radio"
+                                                        name="radiobtnoption" id="radiobtnoption2">
+                                                    <label for="radiobtnoption2">Option 2</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="row my-4">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">Checkbox</h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-ld-6 d-flex">
+                                                <div class="radiobtns pe-4">
+                                                    <input type="checkbox" class="me-1 analysis-form-check-radio"
+                                                        name="checkboxbtnoption" id="checkboxbtnoption1">
+                                                    <label for="checkboxbtnoption1">Option 1</label>
+                                                </div>
+                                                <div class="radiobtns pe-4">
+                                                    <input type="checkbox" class="me-1 analysis-form-check-radio"
+                                                        name="checkboxbtnoption" id="checkboxbtnoption2">
+                                                    <label for="checkboxbtnoption2">Option 2</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row my-4">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">Snackbar</h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-ld-6 mb-3">
+                                                <div
+                                                    class="analysis-snakebar analysis-snakebar-first d-flex align-items-center">
+                                                    <img src="images/info-icon-red.svg" class="me-2" alt="" srcset="">
+                                                    <p class="m-0">This is an error Message</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-ld-6">
+                                                <div
+                                                    class="analysis-snakebar analysis-snakebar-second d-flex align-items-center">
+                                                    <img src="images/info-icon.svg" class="me-2" alt="" srcset="">
+                                                    <p class="m-0">This is an information Message!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 analysis-form-field">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-ld-6 mb-3">
+                                                <div
+                                                    class="analysis-snakebar analysis-snakebar-third d-flex align-items-center">
+                                                    <img src="images/warning-icon.svg" class="me-2" alt="" srcset="">
+                                                    <p class="m-0">This is an information Message!</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-ld-6">
+                                                <div
+                                                    class="analysis-snakebar analysis-snakebar-forth d-flex align-items-center">
+                                                    <img src="images/success-icon.svg" class="me-2" alt="" srcset="">
+                                                    <p class="m-0">This is an information Message!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row my-4">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">Call to action</h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-ld-12 mb-3 d-flex">
+                                                <div class="callbtns-primary pe-4">
+                                                    <input type="button" value="Primary">
+                                                </div>
+                                                <div class="callbtns-secondary pe-4">
+                                                    <input type="button" value="Secondary">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row my-4">
+                                    <div class="mb-3">
+                                        <h4 class="analysis-form-headings">Tabs</h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="row analysis-tab-handle">
+                                            <div class="col-sm-12 col-md-12 col-ld-12 d-flex analysis-tabs-button">
+                                                <div class="analysis-tabs-button-1">
+                                                    <input type="button" value="Tab 1" autofocus>
+                                                </div>
+                                                <div class="analysis-tabs-button-2">
+                                                    <input type="button" value="Tab 2">
+                                                </div>
+                                                <div class="analysis-tabs-button-3">
+                                                    <input type="button" value="Tab 3">
+                                                </div>
+                                            </div>
+                                            <span class="col-sm-12 col-md-12 col-ld-12 py-0 my-0">
+                                                <hr class="my-0">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-ld-12 mb-3">
+                                                <div class="tab-content">
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry. Lorem Ipsum has been the industry's standard dummy text
+                                                    ever since the 1500s, when an unknown printer took a galley of type
+                                                    and scrambled it to make a type specimen book. It has survived not
+                                                    only five centuries, but also the leap into electronic typesetting,
+                                                    remaining essentially unchanged. It was popularised in the 1960s
+                                                    with the release of Letraset sheets containing
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                        </div>
+
+                        </form>
+
+                        <div class="container-fluid">
+                            <div class="row d-flex align-items-center justify-content-center">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        $(".analysis-upload-button").bind("click", function () {
+            $("#inp-btn").click()
+        })
+    </script>
+</body>
+
+</html>
